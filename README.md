@@ -1,15 +1,25 @@
-# obesity-vision
+# PROHI Dashboard - ObesityVision
+
+![Obesity-Vision](./img/logo.svg)
 
 ## Introduction
 
-_The rising prevalence of obesity is a significant global health concern, associated with increased risks of diabetes, cardiovascular disease, and premature mortality. Early identification of individuals at risk of obesity based on lifestyle factors can support preventive interventions and personalized health guidance. Our project addresses this issue by developing a predictive tool that estimates obesity levels from eating habits and physical condition. We will use the “Estimation of Obesity Levels Based on Eating Habits and Physical Condition” dataset from the UCI Machine Learning Repository (ref. 3; 1). As mentioned before, it contains over 2,000 observations and 17 features including one outcome variable as obesity levels. Importantly, this dataset has already been applied in previous study, demonstrating its validity and utility as a tool for developing predictive models of obesity and related health outcomes._
+**Obesity-Vision** is an interactive web dashboard designed to explore, visualize, and predict obesity levels based on individual lifestyle and physical condition factors. The project aims to demonstrate how data-driven tools can enhance understanding of obesity risk patterns and support preventive health strategies.
 
-## Goals and aims
+The medical problem addressed is the **rising global prevalence of obesity**, a major risk factor for chronic diseases such as diabetes, cardiovascular disorders, and metabolic syndrome. Early identification of individuals at risk is essential to guide lifestyle interventions and reduce long-term health burdens.
 
-_Our goals are: (i) conduct descriptive and diagnostic analyses to characterize lifestyle patterns across obesity categories; (ii) train and validate ML classifiers (e.g., random forest, SVMs) to estimate obesity levels; (iii) quantify feature importance to locate risk factors; and (iv) expose predictions, explanations, and what-if exploration via an interactive dashboard._
+We used the UCI dataset [**“Estimation of Obesity Levels Based on Eating Habits and Physical Condition”**](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition), which contains anthropometric and behavioral attributes (e.g., physical activity, diet, water intake, and alcohol consumption) labeled according to obesity level.
+
+For this dashboard, the data preprocessing and predictive modeling were performed in Python using **Scikit-Learn** and **XGBoost**, with interpretability visualizations generated using **SHAP**.
+
+The resulting dashboard allows users to:
+- Interactively explore correlations between lifestyle habits and obesity outcomes.  
+- Visualize the impact of features using SHAP value interpretation.  
+- Input custom values to **predict obesity level categories** with a pre-trained model.
+
+All analyses are intended for **educational and exploratory purposes**, demonstrating the potential of machine learning to support obesity prevention and health education.
 
 ## System description
-
 
 ### Dependencies
 
@@ -20,7 +30,48 @@ Tested on Python 3.12.7 with the following packages:
   - Plotly v6.2.0
   - Scikit-Learn v1.7.0
   - shap v0.48.0
+  - xgboost v3.0.5
+
+### Installation
+
+Run the commands below in a terminal to configure the project and install the package dependencies for the first time.
+
+If you are using macOS, you may need to install **Xcode Command Line Tools** and **OpenMP (libomp)** to support XGBoost.
+
+Check the official Streamlit documentation [Streamlit](https://docs.streamlit.io/get-started/installation/command-line#prerequisites).
+
+1. Create the environment with `python -m venv env`
+2. Activate the virtual environment for Python
+   - `source env/bin/activate` [in Linux/Mac]
+   - `.\env\Scripts\activate.bat` [in Windows command prompt]
+   - `.\env\Scripts\Activate.ps1` [in Windows PowerShell]
+3. Make sure that your terminal is in the environment (`env`) not in the global Python installation
+4. Install required packages `pip install -r ./requirements.txt`
+5. Check that everything is ok running `streamlit hello`
+
+### Execution
+
+To run the dashboard execute the following command:
+
+``` bash
+> streamlit run Welcome.py
+# If the command above fails, use:
+> 1. Create the environment with `python -m venv env`
+  2. Activate the virtual environment for Python
+    - `source env/bin/activate` [in Linux/Mac]
+    - `.\env\Scripts\activate.bat` [in Windows command prompt]
+    - `.\env\Scripts\Activate.ps1` [in Windows PowerShell]
+  3. Make sure that your terminal is in the environment (`env`) not in the global Python installation
+```
 
 ## Contributors
 
-_Add the project's authors, contact information, and links to websites or portfolios._
+_Yueyan Li_
+
+_Zsolt Fehér_
+
+_Weiqi Kong_
+
+_Christoffer Brändefors_
+
+_Naznin Akhtar_
